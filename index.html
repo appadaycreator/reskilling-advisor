@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リスキリング診断【無料】社会人が今学ぶべきスキルを10問で判定</title>
+    <meta name="description" content="リスキリング診断（無料）。現在の仕事・強み・目標から「今の自分が学ぶべきスキル」をAIが提案。IT・語学・資格・ビジネス・クリエイティブの5分野で判定。10問・3分・登録不要。">
+    <meta name="keywords" content="リスキリング,診断,学び直し,スキルアップ,社会人,何を学ぶ,資格,キャリア,転職,副業">
+    <link rel="canonical" href="https://appadaycreator.github.io/reskilling-advisor/">
+    <meta property="og:title" content="リスキリング診断【無料】今の自分が学ぶべきスキルを10問で判定">
+    <meta property="og:description" content="現在の仕事・強み・目標から最適なリスキリング方法を提案。IT・語学・資格・ビジネス・クリエイティブの5分野。無料・3分。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appadaycreator.github.io/reskilling-advisor/">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"リスキリング診断","url":"https://appadaycreator.github.io/reskilling-advisor/","description":"社会人が今学ぶべきスキルをAI診断する無料ツール。","applicationCategory":"EducationApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"1","bestRating":"5","worstRating":"1"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://appadaycreator.github.io/"},{"@type":"ListItem","position":2,"name":"リスキリング診断【無料】","item":"https://appadaycreator.github.io/reskilling-advisor/"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"リスキリングとは何ですか？","acceptedAnswer":{"@type":"Answer","text":"リスキリング（Reskilling）とは、新しい職種や業務に対応するために、これまでと異なるスキルを習得すること。AIや自動化によって職種が変化する中、会社員・フリーランス問わず求められる学び直しです。"}},{"@type":"Question","name":"社会人がリスキリングで学ぶべきスキルは？","acceptedAnswer":{"@type":"Answer","text":"IT・プログラミング、語学（英語・中国語）、データ分析、マーケティング、ファイナンス・会計、マネジメント、クリエイティブ（デザイン・動画編集）などが需要が高いスキルです。この診断で自分に合ったスキルを見つけましょう。"}},{"@type":"Question","name":"リスキリングにかかる時間・費用は？","acceptedAnswer":{"@type":"Answer","text":"スキルによりますが、プログラミングは3〜6ヶ月（月1〜3万円）、語学は6〜12ヶ月（月1〜2万円）、資格は3〜6ヶ月（月5,000〜2万円）が目安です。通信講座・オンライン学習を活用すると費用を抑えられます。"}}]}</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body{font-family:'Hiragino Sans','Yu Gothic',sans-serif;background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);min-height:100vh;}
+        .hero-bg{background:linear-gradient(135deg,#1e3a8a 0%,#065f46 100%);}
+        .question-card{background:white;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+        .option-btn{width:100%;text-align:left;padding:14px 18px;border-radius:14px;border:2px solid #e5e7eb;background:white;cursor:pointer;font-size:0.95rem;transition:all .2s;min-height:52px;display:flex;align-items:center;gap:10px;}
+        .option-btn:hover,.option-btn.selected{border-color:#1e40af;background:#eff6ff;color:#1e3a8a;font-weight:bold;}
+        .option-btn.selected{box-shadow:0 0 0 3px rgba(30,64,175,0.2);}
+        .progress-bar{height:8px;border-radius:4px;background:#e5e7eb;}
+        .progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#1e40af,#059669);transition:width .4s;}
+        .skill-card{border-radius:20px;padding:24px;margin-bottom:12px;}
+        .it{background:linear-gradient(135deg,#eff6ff,#fff);border:2px solid #1e40af;}
+        .language{background:linear-gradient(135deg,#f0fdf4,#fff);border:2px solid #059669;}
+        .business{background:linear-gradient(135deg,#fffbeb,#fff);border:2px solid #d97706;}
+        .creative{background:linear-gradient(135deg,#fdf4ff,#fff);border:2px solid #9333ea;}
+        .data{background:linear-gradient(135deg,#fef2f2,#fff);border:2px solid #dc2626;}
+        .hidden{display:none;}
+        @media(max-width:768px){h1{font-size:clamp(1.4rem,5vw,2.2rem)!important;}.question-card{padding:18px;}.option-btn{font-size:0.88rem;padding:12px 14px;}input,select{font-size:16px!important;}}
+    </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="hero-bg text-white py-10 px-4 text-center">
+    <div class="inline-flex items-center gap-2 bg-white bg-opacity-20 px-4 py-2 rounded-full mb-4 text-sm font-bold">
+        <span class="h-2 w-2 bg-green-300 rounded-full animate-pulse"></span>
+        リスキリング・学び直し診断ツール
+    </div>
+    <h1 class="text-3xl font-extrabold mb-3 leading-tight">今の自分が<span style="color:#6ee7b7">学ぶべきスキル</span>は<br>何ですか？</h1>
+    <p class="text-sm opacity-85 mb-4">現在の仕事・強み・キャリア目標から<strong>最適なリスキリング分野</strong>をAIが提案。<br>IT・語学・資格・ビジネス・クリエイティブの5分野で判定。</p>
+    <div class="flex justify-center gap-5 text-sm opacity-80">
+        <span>✅ 完全無料</span><span>✅ 登録不要</span><span>✅ 3分で診断</span>
+    </div>
+</div>
+
+<div class="max-w-xl mx-auto px-4 py-8" id="app">
+    <div id="quiz-screen">
+        <div class="mb-6">
+            <div class="flex justify-between text-sm text-gray-500 mb-2">
+                <span id="progress-label">質問 1/10</span><span id="progress-pct">10%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:10%"></div></div>
+        </div>
+        <div class="question-card">
+            <div class="text-2xl mb-3" id="q-emoji">💼</div>
+            <h2 class="text-lg font-bold text-gray-800 mb-5" id="q-text">...</h2>
+            <div id="options-container" class="space-y-3"></div>
+        </div>
+        <div class="flex gap-3 mt-5">
+            <button id="prev-btn" class="flex-1 py-3 rounded-xl border-2 border-gray-200 text-gray-600 font-bold bg-white hidden" onclick="prev()">← 前へ</button>
+            <button id="next-btn" class="flex-1 py-3 rounded-xl text-white font-bold opacity-50 cursor-not-allowed" style="background:linear-gradient(135deg,#1e40af,#059669);" disabled onclick="next()">次へ →</button>
+        </div>
+    </div>
+    <div id="loading-screen" class="hidden text-center py-16">
+        <div class="text-5xl mb-4 animate-spin">🎓</div>
+        <p class="text-lg font-bold text-gray-700">あなたに最適なリスキリング分野を分析中...</p>
+    </div>
+    <div id="result-screen" class="hidden">
+        <div class="text-center mb-6">
+            <div class="text-5xl mb-3" id="result-emoji">📚</div>
+            <h2 class="text-2xl font-extrabold text-gray-800 mb-1" id="result-title">診断結果</h2>
+            <p class="text-sm text-gray-500 mt-1" id="result-subtitle"></p>
+        </div>
+
+        <div id="result-top" class="skill-card mb-4">
+            <h3 class="text-lg font-bold mb-2" id="result-headline"></h3>
+            <p class="text-gray-700 leading-relaxed mb-3" id="result-desc"></p>
+            <div class="bg-gray-50 rounded-xl p-3 text-sm">
+                <p class="font-bold text-gray-700 mb-1">🎯 具体的に学ぶもの</p>
+                <div id="skill-list" class="space-y-1 text-gray-600"></div>
+            </div>
+        </div>
+
+        <!-- 学習サービス（アフィリエイト） -->
+        <div class="bg-blue-50 border border-blue-100 rounded-2xl p-5 mb-6">
+            <p class="text-sm font-bold text-blue-800 mb-3">📖 おすすめ学習サービス（無料・有料）</p>
+            <div id="learning-links" class="space-y-2"></div>
+        </div>
+
+        <!-- アクションプラン -->
+        <div class="bg-green-50 border border-green-100 rounded-2xl p-5 mb-6">
+            <h3 class="font-bold text-gray-800 mb-3">🚀 3ヶ月で身につける学習計画</h3>
+            <div id="action-list" class="space-y-2 text-sm text-gray-700"></div>
+        </div>
+
+        <button onclick="shareResult()" class="w-full mb-3 py-3 rounded-xl border-2 border-gray-200 text-gray-700 font-bold bg-white hover:border-blue-400 transition">📤 結果をXでシェアする</button>
+        <button onclick="restart()" class="w-full py-2 text-gray-400 text-sm underline bg-transparent">もう一度診断する</button>
+
+        <div class="mt-8 bg-gray-50 border border-gray-200 rounded-2xl p-4 text-center">
+            <p class="text-xs font-bold text-gray-600 mb-2">💼 あわせて使いたいツール</p>
+            <div class="flex gap-2 flex-wrap justify-center">
+                <a href="https://appadaycreator.github.io/job-change-advisor/" class="bg-white border border-gray-200 rounded-xl px-3 py-2 text-xs font-bold text-gray-700 no-underline">💼 転職タイミング診断</a>
+                <a href="https://appadaycreator.github.io/side-job-aptitude-test/" class="bg-white border border-gray-200 rounded-xl px-3 py-2 text-xs font-bold text-gray-700 no-underline">💡 副業適性診断</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-xl mx-auto px-4 pb-12">
+    <div class="bg-white rounded-2xl p-5 shadow-sm">
+        <h2 class="font-bold text-gray-800 mb-4">❓ よくある質問</h2>
+        <div class="space-y-4 text-sm">
+            <div><strong class="text-gray-700">Q. リスキリングとは？</strong><p class="text-gray-500 mt-1">新しい職種・業務に対応するために、これまでと異なるスキルを習得すること。AIの普及で社会人全員に求められる学び直しです。</p></div>
+            <div><strong class="text-gray-700">Q. 何ヶ月で習得できる？</strong><p class="text-gray-500 mt-1">プログラミング3〜6ヶ月、語学6〜12ヶ月、資格3〜6ヶ月が目安です。</p></div>
+        </div>
+    </div>
+    <div class="text-center mt-4 text-xs text-gray-400">
+        <a href="https://appadaycreator.github.io/" class="hover:underline">AppADayCreator</a> |
+        <a href="privacy.html" class="hover:underline ml-2">プライバシーポリシー</a>
+    </div>
+</div>
+
+<script>
+const Q=[
+    {emoji:'💼',text:'現在の職種・仕事内容は？',opts:[{text:'営業・販売・接客',s:{business:3,language:2}},{text:'事務・管理・バックオフィス',s:{it:2,data:2}},{text:'IT・エンジニア・開発',s:{data:3,language:2}},{text:'マーケティング・企画',s:{creative:2,data:2}},{text:'製造・現場・技術職',s:{it:2,business:1}},{text:'教育・医療・サービス',s:{language:2,creative:1}}]},
+    {emoji:'🎯',text:'転職・副業・昇進、最も叶えたいことは？',opts:[{text:'年収を上げたい（今より100万円以上）',s:{it:2,data:2}},{text:'副業で月5万円以上稼ぎたい',s:{creative:3,it:2}},{text:'キャリアチェンジしたい',s:{it:2,business:2}},{text:'今の職場で昇進・評価されたい',s:{business:3,data:1}},{text:'起業・フリーランスになりたい',s:{creative:2,business:2}}]},
+    {emoji:'⏰',text:'週に学習に使える時間は？',opts:[{text:'2〜3時間（スキマ時間のみ）',s:{language:2,it:1}},{text:'5〜10時間',s:{it:2,data:2}},{text:'10〜20時間',s:{it:3,data:3}},{text:'20時間以上（本気でやる）',s:{it:3,data:3,creative:2}}]},
+    {emoji:'💻',text:'PCやITツールの使いこなし度は？',opts:[{text:'Excelも苦手',s:{business:2,language:2}},{text:'Excel・Wordは普通に使える',s:{data:2,it:1}},{text:'ExcelのVBAや関数を活用できる',s:{data:3,it:2}},{text:'プログラミング経験がある',s:{data:3,creative:2}}]},
+    {emoji:'🌍',text:'英語力は？',opts:[{text:'ほぼ話せない（中学英語レベル）',s:{language:3}},{text:'読むことはある程度できる',s:{language:2}},{text:'日常会話はできる',s:{language:1,business:1}},{text:'ビジネスでも使える',s:{it:2,data:2}}]},
+    {emoji:'🎨',text:'クリエイティブな作業（デザイン・動画・文章）への関心は？',opts:[{text:'非常に興味がある・得意',s:{creative:4}},{text:'やってみたいが経験はない',s:{creative:3}},{text:'少し興味がある',s:{creative:1}},{text:'あまり興味がない',s:{it:1,data:1,business:1}}]},
+    {emoji:'📊',text:'数字・データ・分析への関心は？',opts:[{text:'非常に得意・好き',s:{data:4}},{text:'苦手ではない',s:{data:2}},{text:'どちらかというと苦手',s:{language:2,creative:2}},{text:'全く苦手',s:{language:3,creative:2}}]},
+    {emoji:'🏆',text:'学習のモチベーションが上がるのは？',opts:[{text:'資格・証明書を取得する',s:{business:3,language:2}},{text:'作品・ポートフォリオが増える',s:{creative:3}},{text:'数字で実力が分かる（スコアが上がる）',s:{language:3,it:2}},{text:'副業・案件を受けてお金になる',s:{creative:3,it:2}}]},
+    {emoji:'💰',text:'リスキリングに使える月の予算は？',opts:[{text:'無料のもののみ',s:{it:2,language:1}},{text:'5,000円まで',s:{language:2,it:2}},{text:'10,000〜30,000円',s:{it:3,data:2,language:2}},{text:'30,000円以上（本気投資）',s:{it:3,data:3,business:2}}]},
+    {emoji:'🔭',text:'3年後の理想の姿は？',opts:[{text:'今の仕事でAI・ITツールを活用して効率UP',s:{it:3,data:2}},{text:'外国語を使ったグローバルな仕事',s:{language:4}},{text:'フリーランス・クリエイターとして独立',s:{creative:4}},{text:'管理職・コンサルタントとして活躍',s:{business:4}},{text:'データ・AI専門家として転職',s:{data:4}}]},
+];
+
+const SKILLS={
+    it:{label:'ITスキル・プログラミング',emoji:'💻',cls:'it',
+        desc:'AIとITを使いこなす人材への需要が急増中。プログラミング・AIツール活用・業務自動化スキルが最も市場価値が高いスキルです。未経験でも3〜6ヶ月で習得可能。',
+        skills:['Python入門（データ分析・自動化）','ChatGPT・AI活用術（業務効率化）','ExcelVBA・RPA（業務自動化）','Webアプリ開発入門'],
+        actions:['1ヶ月目: Pythonの基礎（Udemy・YouTube）','2ヶ月目: ChatGPT × 自分の業務で実践','3ヶ月目: 小さなプロジェクトを完成させる'],
+        links:[{name:'Udemy（IT・プログラミング講座）',url:'https://www.udemy.com/ja/','note':'セール時1,500円〜'},
+               {name:'スタディサプリENGLISH',url:'https://studysapuri.jp/course/english-adult/','note':'月2,178円〜'},
+               {name:'Amazon プログラミング本',url:`https://www.amazon.co.jp/s?k=Python+入門+独習&tag=appadaycrea0f-22`,'note':'Amazonで探す'}]},
+    language:{label:'語学・英語力',emoji:'🌍',cls:'language',
+        desc:'グローバル化が進む中、英語力は圧倒的な差別化ポイント。ビジネス英語・TOEIC・オンライン英会話など、目標に合わせた学習法があります。',
+        skills:['TOEIC 600→800点アップ','ビジネス英語（メール・プレゼン）','オンライン英会話（日常会話→ビジネス）','英語以外（中国語・韓国語）'],
+        actions:['1ヶ月目: 毎日30分のリスニング習慣作り','2ヶ月目: オンライン英会話を週3回開始','3ヶ月目: TOEIC受験で現在地を把握'],
+        links:[{name:'ECC外語学院（英会話）',url:'https://www.ecc.co.jp/','note':'無料体験レッスンあり'},
+               {name:'スタディサプリENGLISH',url:'https://studysapuri.jp/course/english-adult/','note':'月2,178円〜'},
+               {name:'Amazon TOEIC参考書',url:`https://www.amazon.co.jp/s?k=TOEIC 800点 参考書&tag=appadaycrea0f-22`,'note':'Amazonで探す'}]},
+    data:{label:'データ分析・AI活用',emoji:'📊',cls:'data',
+        desc:'DX推進で「データを読める人材」の需要が急増。Excel高度活用から始まりBI・Python・機械学習まで、段階的に習得できます。',
+        skills:['Excel高度活用（ピボット・Power Query）','Googleデータポータル・Tableau（可視化）','Python pandas・統計分析入門','ChatGPT・AIツールをビジネスで活用'],
+        actions:['1ヶ月目: Excelピボットテーブルをマスター','2ヶ月目: データを使った業務改善提案を1つ作る','3ヶ月目: Pythonで簡単な分析を実行する'],
+        links:[{name:'Udemy（データ分析講座）',url:'https://www.udemy.com/ja/','note':'セール時1,500円〜'},
+               {name:'ユーキャン（データサイエンス）',url:'https://www.u-can.co.jp/','note':'通信講座'},
+               {name:'Amazon データ分析本',url:`https://www.amazon.co.jp/s?k=データ分析 Python ビジネス&tag=appadaycrea0f-22`,'note':'Amazonで探す'}]},
+    creative:{label:'クリエイティブスキル',emoji:'🎨',cls:'creative',
+        desc:'デザイン・動画・ライティング・SNS運用など、副業・フリーランスへの入り口として最も始めやすいスキル群。完成した作品がポートフォリオになります。',
+        skills:['Canva・Figmaデザイン入門','動画編集（CapCut・Premiere Rush）','Webライティング・SEO文章術','SNS運用・コンテンツマーケティング'],
+        actions:['1ヶ月目: Canvaで10枚のデザインを作る','2ヶ月目: 動画1本を編集して公開する','3ヶ月目: クラウドワークスで初案件を受注する'],
+        links:[{name:'クラウドワークス（案件受注）',url:'https://crowdworks.jp/','note':'無料登録'},
+               {name:'Udemy（デザイン・動画講座）',url:'https://www.udemy.com/ja/','note':'セール時1,500円〜'},
+               {name:'Amazon クリエイター本',url:`https://www.amazon.co.jp/s?k=デザイン 動画編集 副業&tag=appadaycrea0f-22`,'note':'Amazonで探す'}]},
+    business:{label:'ビジネス・マネジメントスキル',emoji:'📋',cls:'business',
+        desc:'論理的思考・プロジェクト管理・財務・マーケティングなどの「ビジネス基礎力」。昇進・転職で最も評価される実践的なスキルです。',
+        skills:['MBA的思考・ロジカルシンキング','ファイナンス・会計基礎（FP3級等）','マーケティング基礎（Web・SNS）','プロジェクトマネジメント（PMP・基礎）'],
+        actions:['1ヶ月目: ビジネス書を月2冊読む（週1冊）','2ヶ月目: FP3級または簿記3級の勉強を開始','3ヶ月目: 業務で学んだことを実際に試す'],
+        links:[{name:'ユーキャン（FP・簿記・資格）',url:'https://www.u-can.co.jp/','note':'通信講座'},
+               {name:'スタディサプリPRO',url:'https://studysapuri.jp/course/pro/','note':'月3,278円〜'},
+               {name:'Amazon ビジネス書',url:`https://www.amazon.co.jp/s?k=ビジネス思考 ロジカル 本&tag=appadaycrea0f-22`,'note':'Amazonで探す'}]},
+};
+
+let st={q:0,ans:[],scores:{it:0,language:0,data:0,creative:0,business:0}};
+
+function render(){
+    const q=Q[st.q],total=Q.length,pct=Math.round(((st.q+1)/total)*100);
+    document.getElementById('progress-label').textContent=`質問 ${st.q+1}/${total}`;
+    document.getElementById('progress-pct').textContent=pct+'%';
+    document.getElementById('progress-fill').style.width=pct+'%';
+    document.getElementById('q-emoji').textContent=q.emoji;
+    document.getElementById('q-text').textContent=q.text;
+    const c=document.getElementById('options-container');c.innerHTML='';
+    q.opts.forEach((o,i)=>{
+        const b=document.createElement('button');
+        b.className='option-btn'+(st.ans[st.q]===i?' selected':'');
+        b.textContent=o.text;
+        b.onclick=()=>{st.ans[st.q]=i;render();};
+        c.appendChild(b);
+    });
+    const nb=document.getElementById('next-btn'),pb=document.getElementById('prev-btn');
+    const has=st.ans[st.q]!==undefined;
+    nb.disabled=!has;nb.classList.toggle('opacity-50',!has);nb.classList.toggle('cursor-not-allowed',!has);
+    nb.textContent=st.q===total-1?'結果を見る 📚':'次へ →';
+    pb.classList.toggle('hidden',st.q===0);
+}
+
+function next(){if(st.ans[st.q]===undefined)return;if(st.q<Q.length-1){st.q++;render();}else showResult();}
+function prev(){if(st.q>0){st.q--;render();}}
+
+function calcScores(){
+    st.scores={it:0,language:0,data:0,creative:0,business:0};
+    Q.forEach((q,qi)=>{
+        const ai=st.ans[qi];if(ai===undefined)return;
+        const s=q.opts[ai].s;
+        Object.entries(s).forEach(([k,v])=>{if(st.scores[k]!==undefined)st.scores[k]+=v;});
+    });
+}
+
+function getTop(){return Object.entries(st.scores).sort((a,b)=>b[1]-a[1])[0][0];}
+
+function showResult(){
+    document.getElementById('quiz-screen').classList.add('hidden');
+    document.getElementById('loading-screen').classList.remove('hidden');
+    setTimeout(()=>{
+        calcScores();
+        document.getElementById('loading-screen').classList.add('hidden');
+        renderResult();
+        document.getElementById('result-screen').classList.remove('hidden');
+        if(window.dataLayer)window.dataLayer.push({event:'reskilling_diagnosis_complete',result:getTop()});
+    },1500);
+}
+
+function renderResult(){
+    const top=getTop(),r=SKILLS[top];
+    const sorted=Object.entries(st.scores).sort((a,b)=>b[1]-a[1]);
+    document.getElementById('result-emoji').textContent=r.emoji;
+    document.getElementById('result-title').textContent=r.label;
+    document.getElementById('result-subtitle').textContent=`2位: ${SKILLS[sorted[1][0]].label}`;
+    document.getElementById('result-top').className='skill-card mb-4 '+r.cls;
+    document.getElementById('result-headline').textContent=`🎯 あなたが今学ぶべきスキル: ${r.label}`;
+    document.getElementById('result-desc').textContent=r.desc;
+    document.getElementById('skill-list').innerHTML=r.skills.map(s=>`<div class="flex gap-2"><span class="text-blue-500">▶</span><span>${s}</span></div>`).join('');
+    document.getElementById('action-list').innerHTML=r.actions.map(a=>`<div class="flex gap-2 items-start"><span class="text-green-600 font-bold flex-shrink-0">✓</span><span>${a}</span></div>`).join('');
+    document.getElementById('learning-links').innerHTML=r.links.map(l=>`<a href="${l.url.includes('amazon')?l.url:l.url}" target="_blank" rel="noopener noreferrer" class="js-track-affiliate flex items-center justify-between bg-white border border-blue-100 rounded-xl p-3 text-sm no-underline hover:shadow-md transition" data-platform="${l.name}" data-item-name="リスキリング講座" data-link-type="affiliate_link"><div><div class="font-bold text-gray-800">${l.name}</div><div class="text-xs text-gray-500">${l.note}</div></div><span class="text-blue-600 font-bold">見る →</span></a>`).join('');
+    localStorage.setItem('reskilling_result',JSON.stringify({skill:top,label:r.label,date:new Date().toISOString()}));
+}
+
+function shareResult(){
+    const d=JSON.parse(localStorage.getItem('reskilling_result')||'{}');
+    const text=`リスキリング診断で「${d.label}」が最適と判定されました！社会人の学び直しに役立てています。あなたも診断してみては？`;
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent('https://appadaycreator.github.io/reskilling-advisor/')}&hashtags=リスキリング,学び直し,スキルアップ`,'_blank');
+}
+
+function restart(){
+    st={q:0,ans:[],scores:{it:0,language:0,data:0,creative:0,business:0}};
+    document.getElementById('result-screen').classList.add('hidden');
+    document.getElementById('quiz-screen').classList.remove('hidden');
+    render();
+}
+
+document.addEventListener('click',e=>{
+    const el=e.target.closest('.js-track-affiliate');
+    if(!el)return;
+    if(window.dataLayer)window.dataLayer.push({event:'affiliate_click',affiliate_item:el.dataset.itemName,affiliate_platform:el.dataset.platform});
+});
+
+render();
+</script>
+</body>
+</html>
