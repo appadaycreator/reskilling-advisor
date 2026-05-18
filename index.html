@@ -280,5 +280,17 @@ document.addEventListener('click',e=>{
 
 render();
 </script>
+    <script>
+    /* グローバルエラーハンドラ */
+    window.onerror = function(msg, src, line, col, err) {
+      try {
+        console.error("[AppError]", msg, src ? "at " + src + ":" + line : "");
+      } catch(e) {}
+      return false;
+    };
+    window.addEventListener("unhandledrejection", function(e) {
+      console.error("[PromiseError]", e.reason);
+    });
+    </script>
 </body>
 </html>
