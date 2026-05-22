@@ -149,13 +149,13 @@
 
 <script>
 const Q=[
-    {emoji:'💼',text:'現在の職種・仕事内容は？',opts:[{text:'営業・販売・接客',s:{business:3,language:2}},{text:'事務・管理・バックオフィス',s:{it:2,data:2}},{text:'IT・エンジニア・開発',s:{data:3,language:2}},{text:'マーケティング・企画',s:{creative:2,data:2}},{text:'製造・現場・技術職',s:{it:2,business:1}},{text:'教育・医療・サービス',s:{language:2,creative:1}}]},
+    {emoji:'💼',text:'現在の職種・仕事内容は？',opts:[{text:'営業・販売・接客',s:{business:3,language:2}},{text:'事務・管理・バックオフィス',s:{it:2,data:2}},{text:'IT・エンジニア・開発',s:{it:4,data:1}},{text:'マーケティング・企画',s:{creative:2,data:2}},{text:'製造・現場・技術職',s:{it:3,business:1}},{text:'教育・医療・サービス',s:{language:2,creative:1}}]},
     {emoji:'🎯',text:'転職・副業・昇進、最も叶えたいことは？',opts:[{text:'年収を上げたい（今より100万円以上）',s:{it:2,data:2}},{text:'副業で月5万円以上稼ぎたい',s:{creative:3,it:2}},{text:'キャリアチェンジしたい',s:{it:2,business:2}},{text:'今の職場で昇進・評価されたい',s:{business:3,data:1}},{text:'起業・フリーランスになりたい',s:{creative:2,business:2}}]},
     {emoji:'⏰',text:'週に学習に使える時間は？',opts:[{text:'2〜3時間（スキマ時間のみ）',s:{language:2,it:1}},{text:'5〜10時間',s:{it:2,data:2}},{text:'10〜20時間',s:{it:3,data:3}},{text:'20時間以上（本気でやる）',s:{it:3,data:3,creative:2}}]},
-    {emoji:'💻',text:'PCやITツールの使いこなし度は？',opts:[{text:'Excelも苦手',s:{business:2,language:2}},{text:'Excel・Wordは普通に使える',s:{data:2,it:1}},{text:'ExcelのVBAや関数を活用できる',s:{data:3,it:2}},{text:'プログラミング経験がある',s:{data:3,creative:2}}]},
+    {emoji:'💻',text:'PCやITツールの使いこなし度は？',opts:[{text:'Excelも苦手',s:{business:2,language:2}},{text:'Excel・Wordは普通に使える',s:{data:2,it:1}},{text:'ExcelのVBAや関数を活用できる',s:{data:3,it:2}},{text:'プログラミング経験がある',s:{it:4,data:1}}]},
     {emoji:'🌍',text:'英語力は？',opts:[{text:'ほぼ話せない（中学英語レベル）',s:{language:3}},{text:'読むことはある程度できる',s:{language:2}},{text:'日常会話はできる',s:{language:1,business:1}},{text:'ビジネスでも使える',s:{it:2,data:2}}]},
     {emoji:'🎨',text:'クリエイティブな作業（デザイン・動画・文章）への関心は？',opts:[{text:'非常に興味がある・得意',s:{creative:4}},{text:'やってみたいが経験はない',s:{creative:3}},{text:'少し興味がある',s:{creative:1}},{text:'あまり興味がない',s:{it:1,data:1,business:1}}]},
-    {emoji:'📊',text:'数字・データ・分析への関心は？',opts:[{text:'非常に得意・好き',s:{data:4}},{text:'苦手ではない',s:{data:2}},{text:'どちらかというと苦手',s:{language:2,creative:2}},{text:'全く苦手',s:{language:3,creative:2}}]},
+    {emoji:'📊',text:'数字・データ・分析への関心は？',opts:[{text:'非常に得意・好き',s:{data:4}},{text:'苦手ではない',s:{data:2,it:1}},{text:'どちらかというと苦手',s:{language:2,creative:2,it:1}},{text:'全く苦手',s:{language:3,creative:2,it:2}}]},
     {emoji:'🏆',text:'学習のモチベーションが上がるのは？',opts:[{text:'資格・証明書を取得する',s:{business:3,language:2}},{text:'作品・ポートフォリオが増える',s:{creative:3}},{text:'数字で実力が分かる（スコアが上がる）',s:{language:3,it:2}},{text:'副業・案件を受けてお金になる',s:{creative:3,it:2}}]},
     {emoji:'💰',text:'リスキリングに使える月の予算は？',opts:[{text:'無料のもののみ',s:{it:2,language:1}},{text:'5,000円まで',s:{language:2,it:2}},{text:'10,000〜30,000円',s:{it:3,data:2,language:2}},{text:'30,000円以上（本気投資）',s:{it:3,data:3,business:2}}]},
     {emoji:'🔭',text:'3年後の理想の姿は？',opts:[{text:'今の仕事でAI・ITツールを活用して効率UP',s:{it:3,data:2}},{text:'外国語を使ったグローバルな仕事',s:{language:4}},{text:'フリーランス・クリエイターとして独立',s:{creative:4}},{text:'管理職・コンサルタントとして活躍',s:{business:4}},{text:'データ・AI専門家として転職',s:{data:4}}]},
