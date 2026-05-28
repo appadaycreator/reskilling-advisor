@@ -1,0 +1,17 @@
+{
+  "name": "リスキリング診断【無料】あなたに向いたIT・データスキルが分かる",
+  "short_name": "リスキリング診断【無料】",
+  "description": "現職スキルと市場ニーズから最適な学び直しを診断。ITエンジニア・データサイエンス・DX人材への転換を提案。",
+  "start_url": "/reskilling-advisor/",
+  "display": "standalone",
+  "background_color": "#f8faf9",
+  "theme_color": "#6366F1",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
