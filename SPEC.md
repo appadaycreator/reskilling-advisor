@@ -71,3 +71,4 @@ GitHub Pages（mainブランチ push → 自動デプロイ）
 ## ライセンス
 
 MIT License
+- 2026-05-29: PWA theme-color ブランドカラー統一 (#6366F1→#7c3aed) [improve_auto 横展開]
