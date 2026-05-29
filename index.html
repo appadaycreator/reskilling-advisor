@@ -147,7 +147,7 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
     </div>
 </div>
 
-<div class="max-w-xl mx-auto px-4 py-8" id="app">
+<div class="max-w-xl mx-auto px-4 py-8" id="app" role="main">
     <div id="quiz-screen">
         <div class="mb-6">
             <div class="flex justify-between text-sm text-gray-500 mb-2">
@@ -161,8 +161,8 @@ button, .btn, .btn-primary, .option-btn, [role="button"] { min-height: 48px; min
             <div id="options-container" class="space-y-3"></div>
         </div>
         <div class="flex gap-3 mt-5">
-            <button id="prev-btn" class="flex-1 py-3 rounded-xl border-2 border-gray-200 text-gray-600 font-bold bg-white hidden" onclick="prev()">← 前へ</button>
-            <button id="next-btn" class="flex-1 py-3 rounded-xl text-white font-bold opacity-50 cursor-not-allowed" style="background:linear-gradient(135deg,#1e40af,#059669);" disabled onclick="next()">次へ →</button>
+            <button id="prev-btn" class="flex-1 py-3 rounded-xl border-2 border-gray-200 text-gray-600 font-bold bg-white hidden" onclick="prev()" aria-label="← 前へ">← 前へ</button>
+            <button id="next-btn" class="flex-1 py-3 rounded-xl text-white font-bold opacity-50 cursor-not-allowed" style="background:linear-gradient(135deg,#1e40af,#059669);" disabled onclick="next()" aria-label="次へ →">次へ →</button>
         </div>
     </div>
     <div id="loading-screen" class="hidden text-center py-16">
